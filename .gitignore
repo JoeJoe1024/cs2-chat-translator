@@ -1,0 +1,12 @@
+# Personal config (contains encrypted API key)
+config.json
+
+# Node.js dependencies (too large, user runs npm install)
+node_modules/
+
+# Bundled Node.js runtime (too large for GitHub)
+runtime/
+
+# ZIP distribution
+*.zip
+
