@@ -135,10 +135,22 @@ D:\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg
 
 ### Step 4: Bind a key
 
+**Option A: Add to autoexec.cfg** (runs automatically on launch)
+
 Add this to your `autoexec.cfg`:
 ```
 bind kp_plus "exec chat_reader.cfg"
 ```
+
+**Option B: Run directly in the CS2 console**
+
+1. Launch CS2 and press **`` ` ``** (top-left key) to open the console
+2. Type the command:
+   ```
+   bind kp_plus "exec chat_reader.cfg"
+   ```
+3. Press Enter
+
 > `kp_plus` is the `+` key on the numpad. You can change it in the GUI settings.
 
 ---

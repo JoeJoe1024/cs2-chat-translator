@@ -142,11 +142,23 @@ D:\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg
 
 ### 步驟 4：綁定按鍵
 
+**方式 A：寫入 autoexec.cfg**（開機自動执行）
+
 在 `autoexec.cfg` 加入：
 ```
 bind kp_plus "exec chat_reader.cfg"
 ```
-> `kp_plus` 是數字鍵盤的 `+` 鍵。可在 GUI 設定頁面自行修改。
+
+**方式 B：在 CS2 控制台直接執行**
+
+1. 進入 CS2，按 **`` ` ``**（鍵盤左上角第一鍵）開啟控制台
+2. 輸入指令：
+   ```
+   bind kp_plus "exec chat_reader.cfg"
+   ```
+3. 按 Enter 執行
+
+> 按鍵預設為 `kp_plus`（數字鍵盤的 `+`）。可在 GUI 設定頁面自行修改。
 
 ---
 
