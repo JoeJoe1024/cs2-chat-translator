@@ -23,6 +23,20 @@ This fork is for players like me: people who want to connect across language bar
 
 ---
 
+## Screenshots
+
+### Web GUI
+![Main interface](docs/screenshot-main.png)
+
+![Settings panel](docs/screenshot-settings.png)
+
+### In Action
+![Live translation feed](docs/zh-demo.png)
+
+![CS2 in-game chat](docs/zh-ingame.png)
+
+---
+
 ## What's New in This Fork
 
 | Feature | Description |

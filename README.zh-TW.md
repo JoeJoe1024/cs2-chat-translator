@@ -23,6 +23,20 @@
 
 ---
 
+## 截圖
+
+### Web GUI 介面
+![主介面](docs/screenshot-main-zh.png)
+
+![設定頁面](docs/screenshot-settings-zh.png)
+
+### 實際使用效果
+![即時翻譯畫面](docs/zh-demo.png)
+
+![CS2 遊戲內聊天](docs/zh-ingame.png)
+
+---
+
 ## 相較原版的新增功能
 
 | 功能 | 說明 |
