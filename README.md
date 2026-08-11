@@ -119,14 +119,21 @@ Open your browser at **http://127.0.0.1:7420**
 3. Under **Launch Options**, add: `-condebug`
 4. Start CS2 once so `console.log` is created
 
-### Step 2: Find your cfg folder
+### Step 2: Find your console log path
+
+Typical Windows path:
+```
+D:\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\console.log
+```
+
+### Step 3: Find your cfg folder
 
 Typical Windows path:
 ```
 D:\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg
 ```
 
-### Step 3: Bind a key
+### Step 4: Bind a key
 
 Add this to your `autoexec.cfg`:
 ```

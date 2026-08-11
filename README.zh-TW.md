@@ -126,14 +126,21 @@
 3. 在「**啟動選項**」加入：`-condebug`
 4. 啟動 CS2 一次，讓 `console.log` 建立起來
 
-### 步驟 2：找到 cfg 資料夾
+### 步驟 2：找到主控台記錄路徑（console.log）
+
+Windows 下 Steam 的典型路徑：
+```
+D:\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\console.log
+```
+
+### 步驟 3：找到 cfg 資料夾
 
 Windows 下 Steam 的典型路徑：
 ```
 D:\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg
 ```
 
-### 步驟 3：綁定按鍵
+### 步驟 4：綁定按鍵
 
 在 `autoexec.cfg` 加入：
 ```
