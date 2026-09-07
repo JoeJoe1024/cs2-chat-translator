@@ -1,5 +1,5 @@
 {
-  "subtitle": "Překladač chatu (Gemini AI)",
+  "subtitle": "Překladač chatu",
   "statusConnecting": "Připojování…",
   "statusWatching": "Sledování console.log",
   "statusIdle": "Nečinný",
@@ -19,6 +19,7 @@
   "logPathLabel": "Cesta k logu konzole",
   "cfgDirLabel": "Cesta k adresáři CFG",
   "bindKeyLabel": "Klávesa přiřazení",
+  "condebugLabel": "Možnost spuštění CS2",
   "autoLangLabel": "Jazyk automatického překladu",
   "autoTransLabel": "Automaticky překládat zprávy bez příkazů",
   "autoTransToggle": "Zobrazit výsledky automatického překladu",
@@ -45,6 +46,8 @@
   "engineLabel": "Překladový engine",
   "engineGoogle": "Google Překladač (Zdarma)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "Otestovat klíč",
   "testKeyTesting": "Testování…",
   "testKeyValid": "Klíč API platný ✔",

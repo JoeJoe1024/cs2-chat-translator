@@ -1,5 +1,5 @@
 {
-  "subtitle": "Chat-oversætter (Gemini AI)",
+  "subtitle": "Chat-oversætter",
   "statusConnecting": "Opretter forbindelse…",
   "statusWatching": "Overvåger console.log",
   "statusIdle": "Inaktiv",
@@ -19,6 +19,7 @@
   "logPathLabel": "Sti til konsollog",
   "cfgDirLabel": "Sti til CFG-mappe",
   "bindKeyLabel": "Bindingstast",
+  "condebugLabel": "CS2 startindstilling",
   "autoLangLabel": "Auto-oversættelsessprog",
   "autoTransLabel": "Auto-oversæt ikke-kommando-beskeder",
   "autoTransToggle": "Vis auto-oversættelsesresultater",
@@ -45,6 +46,8 @@
   "engineLabel": "Oversættelsesmotor",
   "engineGoogle": "Google Translate (Gratis)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "Test nøgle",
   "testKeyTesting": "Tester…",
   "testKeyValid": "API-nøgle gyldig ✔",

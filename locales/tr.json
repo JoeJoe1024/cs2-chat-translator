@@ -1,5 +1,5 @@
 {
-  "subtitle": "Sohbet Çevirmeni (Gemini AI)",
+  "subtitle": "Sohbet Çevirmeni",
   "statusConnecting": "Bağlanıyor…",
   "statusWatching": "console.log izleniyor",
   "statusIdle": "Bekliyor",
@@ -19,6 +19,7 @@
   "logPathLabel": "Konsol günlük yolu",
   "cfgDirLabel": "CFG dizin yolu",
   "bindKeyLabel": "Bağlama tuşu",
+  "condebugLabel": "CS2 başlatma seçeneği",
   "autoLangLabel": "Otomatik çeviri dili",
   "autoTransLabel": "Komut olmayan mesajları otomatik çevir",
   "autoTransToggle": "Otomatik çeviri sonuçlarını göster",
@@ -45,6 +46,8 @@
   "engineLabel": "Çeviri motoru",
   "engineGoogle": "Google Çeviri (Ücretsiz)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "Anahtarı test et",
   "testKeyTesting": "Test ediliyor…",
   "testKeyValid": "API anahtarı geçerli ✔",

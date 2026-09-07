@@ -1,5 +1,5 @@
 {
-  "subtitle": "Chat Translator (Gemini AI)",
+  "subtitle": "Chat Translator",
   "statusConnecting": "Connecting…",
   "statusWatching": "Watching console.log",
   "statusIdle": "Idle",
@@ -19,6 +19,7 @@
   "logPathLabel": "Console log path",
   "cfgDirLabel": "CFG directory path",
   "bindKeyLabel": "Bind key",
+  "condebugLabel": "CS2 launch option",
   "autoLangLabel": "Auto-translate language",
   "autoTransLabel": "Auto-translate non-command messages",
   "autoTransToggle": "Show auto-translation results",
@@ -45,6 +46,8 @@
   "engineLabel": "Translation Engine",
   "engineGoogle": "Google Translate (Free)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "Test Key",
   "testKeyTesting": "Testing…",
   "testKeyValid": "API Key is valid",

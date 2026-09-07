@@ -1,5 +1,5 @@
 {
-  "subtitle": "Tłumacz czatu (Gemini AI)",
+  "subtitle": "Tłumacz czatu",
   "statusConnecting": "Łączenie…",
   "statusWatching": "Obserwowanie console.log",
   "statusIdle": "Bezczynny",
@@ -19,6 +19,7 @@
   "logPathLabel": "Ścieżka do dziennika konsoli",
   "cfgDirLabel": "Ścieżka do katalogu CFG",
   "bindKeyLabel": "Klawisz wiązania",
+  "condebugLabel": "Opcja uruchomienia CS2",
   "autoLangLabel": "Język auto-tłumaczenia",
   "autoTransLabel": "Auto-tłumacz wiadomości bez poleceń",
   "autoTransToggle": "Pokaż wyniki auto-tłumaczenia",
@@ -45,6 +46,8 @@
   "engineLabel": "Silnik tłumaczenia",
   "engineGoogle": "Tłumacz Google (Bezpłatny)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "Testuj klucz",
   "testKeyTesting": "Testowanie…",
   "testKeyValid": "Klucz API ważny ✔",

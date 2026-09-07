@@ -1,5 +1,5 @@
 {
-  "subtitle": "Переводчик чата (Gemini AI)",
+  "subtitle": "Переводчик чата",
   "statusConnecting": "Подключение…",
   "statusWatching": "Слежение за console.log",
   "statusIdle": "Ожидание",
@@ -19,6 +19,7 @@
   "logPathLabel": "Путь к журналу консоли",
   "cfgDirLabel": "Путь к каталогу CFG",
   "bindKeyLabel": "Клавиша привязки",
+  "condebugLabel": "Параметр запуска CS2",
   "autoLangLabel": "Язык авто-перевода",
   "autoTransLabel": "Авто-перевод сообщений без команд",
   "autoTransToggle": "Показывать результаты авто-перевода",
@@ -45,6 +46,8 @@
   "engineLabel": "Движок перевода",
   "engineGoogle": "Google Переводчик (Бесплатно)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "Проверить ключ",
   "testKeyTesting": "Проверка…",
   "testKeyValid": "Ключ действителен ✔",

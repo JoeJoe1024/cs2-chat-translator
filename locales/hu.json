@@ -1,5 +1,5 @@
 {
-  "subtitle": "Chat Fordító (Gemini AI)",
+  "subtitle": "Chat Fordító",
   "statusConnecting": "Csatlakozás…",
   "statusWatching": "console.log figyelése",
   "statusIdle": "Tétlen",
@@ -19,6 +19,7 @@
   "logPathLabel": "Konzoló napló elérési útja",
   "cfgDirLabel": "CFG-könyvtár elérési útja",
   "bindKeyLabel": "Kötési billentyű",
+  "condebugLabel": "CS2 indítási opció",
   "autoLangLabel": "Automatikus fordítás nyelve",
   "autoTransLabel": "Nem-parancs üzenetek automatikus fordítása",
   "autoTransToggle": "Automatikus fordítás eredményeinek megjelenítése",
@@ -45,6 +46,8 @@
   "engineLabel": "Fordítási motor",
   "engineGoogle": "Google Fordító (Ingyenes)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "Kulcs tesztelése",
   "testKeyTesting": "Tesztelés…",
   "testKeyValid": "API-kulcs érvényes ✔",

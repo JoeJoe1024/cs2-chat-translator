@@ -1,5 +1,5 @@
 {
-  "subtitle": "Chat Vertaler (Gemini AI)",
+  "subtitle": "Chat Vertaler",
   "statusConnecting": "Verbinden…",
   "statusWatching": "console.log bewaken",
   "statusIdle": "Inactief",
@@ -19,6 +19,7 @@
   "logPathLabel": "Pad naar consolelogboek",
   "cfgDirLabel": "Pad naar CFG-map",
   "bindKeyLabel": "Bindingstoets",
+  "condebugLabel": "CS2 startoptie",
   "autoLangLabel": "Automatische vertaaltaal",
   "autoTransLabel": "Berichten zonder opdracht automatisch vertalen",
   "autoTransToggle": "Resultaten van automatische vertaling tonen",
@@ -45,6 +46,8 @@
   "engineLabel": "Vertaalmotor",
   "engineGoogle": "Google Translate (Gratis)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "Sleutel testen",
   "testKeyTesting": "Testen…",
   "testKeyValid": "API-sleutel geldig ✔",

@@ -4,7 +4,7 @@
 
 > **[English README](README.md)**
 
-> **Fork 版本 v2.0.0**  
+> **Fork 版本 v2.1.0**  
 > 原作者：[MeckeDev](https://github.com/MeckeDev/cs2-chat-translator)  
 > 本版修改者：[Joe (JoeJoe1024)](https://github.com/JoeJoe1024)  
 > 本版針對 Windows 環境全面優化，新增 Web GUI 功能、Gemini AI 支援、多語言介面、API 金鑰加密等功能。
@@ -93,7 +93,7 @@
 
 ### 方式 A：下載 ZIP（推薦，免安裝）
 
-1. 從 [Releases](https://github.com/JoeJoe1024/cs2-chat-translator/releases) 下載最新版 **`cs2-chat-translator-2.0.0.zip`**
+1. 從 [Releases](https://github.com/JoeJoe1024/cs2-chat-translator/releases) 下載最新版 **`cs2-chat-translator-2.1.0.zip`**
 2. 解壓縮到任意位置
 3. 雙擊 **`start.bat`**
 4. 瀏覽器自動開啟 `http://127.0.0.1:7420`

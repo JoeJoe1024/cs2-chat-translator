@@ -128,7 +128,9 @@ const defaultConfig = {
   tagAll: "ALL",
   uiLang: "en",
   apiKey: "",
-  engine: "google"
+  engine: "google",
+  sendEngine: "google",
+  chatEngine: "google"
 };
 
 function loadConfig() {
@@ -148,7 +150,9 @@ function loadConfig() {
       tagAll: cfg.tagAll || defaultConfig.tagAll,
       uiLang: cfg.uiLang || "en",
       apiKey: decryptApiKey(cfg.apiKey || ""),
-      engine: cfg.apiKey ? (cfg.engine || "gemini") : "google"
+      engine: cfg.apiKey ? (cfg.engine || "gemini") : "google",
+      sendEngine: cfg.sendEngine || cfg.engine || defaultConfig.sendEngine,
+      chatEngine: cfg.chatEngine || cfg.engine || defaultConfig.chatEngine
     };
   } catch (err) {
     console.error(chalk.red(`Failed to load config: ${err.message}`));
@@ -170,7 +174,9 @@ function saveConfig(cfg) {
       tagAll: cfg.tagAll || defaultConfig.tagAll,
       uiLang: cfg.uiLang || "en",
       apiKey: encryptApiKey(cfg.apiKey || ""),
-      engine: cfg.apiKey ? (cfg.engine || "gemini") : "google"
+      engine: cfg.apiKey ? (cfg.engine || "gemini") : "google",
+      sendEngine: cfg.sendEngine || defaultConfig.sendEngine,
+      chatEngine: cfg.chatEngine || defaultConfig.chatEngine
     };
     fs.writeFileSync(CONFIG_PATH, JSON.stringify(merged, null, 2), "utf8");
     return merged;
@@ -264,14 +270,16 @@ function pressBindKey() { }
 
 // -----------------------------------------------------------------------------
 // 翻譯核心：依設定切換 Gemini AI 或 Google 翻譯
+// engine 由呼叫者指定（"google" 或 "gemini"），若無 API Key 強制退回 google
 // -----------------------------------------------------------------------------
-async function smartTranslate(text, toLang = "en") {
+async function smartTranslate(text, toLang = "en", engine = "google") {
   const cfg = loadConfig();
   const apiKey = cfg.apiKey || "";
-  const engine = apiKey ? (cfg.engine || "gemini") : "google";
+  // 若指定 gemini 但無 API Key，退回 google
+  const resolvedEngine = (engine === "gemini" && apiKey) ? "gemini" : "google";
 
   // ── Google 翻譯（免費，不需要 Key）──
-  if (engine === "google") {
+  if (resolvedEngine === "google") {
     try {
       const result = await translate(text, { to: toLang });
       return { text: result.text, from: { language: { iso: result.from?.language?.iso || "auto" } } };
@@ -284,7 +292,7 @@ async function smartTranslate(text, toLang = "en") {
 
   // ── Gemini AI ──
   try {
-    const ai = new GoogleGenAI({ apiKey });
+    const ai = new GoogleGenAI({ apiKey: apiKey });
     const prompt = `Translate the following text into ${toLang === 'en' ? 'English' : toLang}. 
 Please keep the translation faithful and close to the literal meaning, while ensuring it sounds natural. Only output the translated text, nothing else. Do not wrap in quotes.
 Text: "${text}"`;
@@ -362,7 +370,9 @@ async function handleTm({ isTeam, sender, message }) {
   const lang = cmd.slice(3).toLowerCase();
   const text = rest.join(" ").trim();
   if (!text) return true;
-  const res = await smartTranslate(text, lang);
+  const cfg2 = loadConfig();
+  const sendEngine = cfg2.apiKey ? (cfg2.sendEngine || "google") : "google";
+  const res = await smartTranslate(text, lang, sendEngine);
   writeChatCfg({ message: res.text, team: isTeam });
   setTimeout(pressBindKey, 150);
   broadcast("command", { kind: "tm", target: lang, from: "Auto", sender, original: text, translated: res.text });
@@ -378,7 +388,9 @@ async function handleTl({ isTeam, message }) {
   }
   const parts = message.split(" ");
   const target = parts[1]?.toLowerCase() || "en";
-  const res = await smartTranslate(lastForeignMsg.message, target);
+  const cfg2 = loadConfig();
+  const sendEngine = cfg2.apiKey ? (cfg2.sendEngine || "google") : "google";
+  const res = await smartTranslate(lastForeignMsg.message, target, sendEngine);
   const output = `${lastForeignMsg.player} said - ${res.text}`;
   writeChatCfg({ message: output, team: isTeam });
   setTimeout(pressBindKey, 150);
@@ -392,10 +404,10 @@ async function autoTranslateToConsole({ team, sender, message }) {
   if (!message) return;
   if (/^(_tl\b|tm_[a-z_]{2,5}\b|code[_\s])/i.test(message)) return;
   if (/^[.\s]+$/.test(message)) return;
-  const res = await smartTranslate(message, AUTO_TRANSLATE_TARGET);
   const cfg2 = loadConfig();
-  const engineUsed = cfg2.apiKey ? (cfg2.engine || "gemini") : "google";
-  broadcast("auto", { team, sender, fromIso: "auto", fromName: "Auto", target: AUTO_TRANSLATE_TARGET, translated: res.text, original: message, engine: engineUsed });
+  const chatEngine = cfg2.apiKey ? (cfg2.chatEngine || "google") : "google";
+  const res = await smartTranslate(message, AUTO_TRANSLATE_TARGET, chatEngine);
+  broadcast("auto", { team, sender, fromIso: "auto", fromName: "Auto", target: AUTO_TRANSLATE_TARGET, translated: res.text, original: message, engine: chatEngine });
 }
 
 async function handleLine(line) {
@@ -603,7 +615,7 @@ function buildIndexHtml() {
 <header>
   <div class="brand">
     <span class="mark">CS2</span>
-    <span data-i18n="subtitle">Chat Translator (Gemini AI)</span>
+    <span data-i18n="subtitle">Chat Translator</span>
   </div>
   <div class="header-right">
     <button class="hdr-btn" id="clearFeedBtn" title="Clear feed" data-i18n="clearFeed">🗑 Clear</button>
@@ -686,7 +698,14 @@ function buildIndexHtml() {
         <div style="margin-top:4px; font-size:11px; color:var(--muted);"><span data-i18n="apiKeyNoKey">No key?</span> <a href="https://aistudio.google.com/apikey" target="_blank" style="color:var(--accent);" data-i18n="apiKeyGetFree">Get free key at aistudio.google.com</a></div>
       </div>
       <div class="field">
-        <label data-i18n="engineLabel">Translation Engine</label>
+        <label data-i18n="sendEngineLabel">Send Text Engine</label>
+        <div class="seg" id="segSendEngine">
+          <button data-val="google" class="active" id="sendEngineGoogle" data-i18n="engineGoogle">🌐 Google Translate (Free)</button>
+          <button data-val="gemini" id="sendEngineGemini" disabled style="opacity:.4;" data-i18n="engineGemini">✨ Gemini AI</button>
+        </div>
+      </div>
+      <div class="field">
+        <label data-i18n="chatEngineLabel">Chat Translation Engine</label>
         <div class="seg" id="segEngine">
           <button data-val="google" class="active" id="engineGoogle" data-i18n="engineGoogle">🌐 Google Translate (Free)</button>
           <button data-val="gemini" id="engineGemini" disabled style="opacity:.4;" data-i18n="engineGemini">✨ Gemini AI</button>
@@ -735,6 +754,10 @@ function buildIndexHtml() {
         <label for="bindKey" data-i18n="bindKeyLabel">Bind key</label>
         <input id="bindKey" type="text" maxlength="16" />
         <div id="bindHint" style="margin-top:5px; padding:6px 8px; background:var(--bg); border:1px solid var(--border); border-radius:3px; font-size:11px; color:var(--muted); cursor:pointer; user-select:all;" title="Click to copy"></div>
+      </div>
+      <div class="field">
+        <label data-i18n="condebugLabel">CS2 launch option</label>
+        <div id="condebugHint" style="padding:6px 8px; background:var(--bg); border:1px solid var(--border); border-radius:3px; font-size:11px; color:var(--muted); cursor:pointer; user-select:all;" title="Click to copy">-condebug</div>
       </div>
       <div class="field">
         <label data-i18n="chatTagTitle">Chat Tag Prefixes</label>
@@ -876,12 +899,16 @@ function buildIndexHtml() {
   const engineGemini = document.getElementById('engineGemini');
   const engineGoogle = document.getElementById('engineGoogle');
   const engineBadge = document.getElementById('engineBadge');
+  const segSendEngine = document.getElementById('segSendEngine');
+  const sendEngineGemini = document.getElementById('sendEngineGemini');
+  const sendEngineGoogle = document.getElementById('sendEngineGoogle');
   const tagCTInput = document.getElementById('tagCT');
   const tagTInput = document.getElementById('tagT');
   const tagAllInput = document.getElementById('tagAll');
 
   let autoTranslateOn = true;
   let currentEngine = 'google';
+  let currentSendEngine = 'google';
 
   function updateEngineBadge(engine) {
     currentEngine = engine;
@@ -900,11 +927,22 @@ function buildIndexHtml() {
     updateEngineBadge(engine);
   }
 
+  function syncSendEngineButtons(engine) {
+    currentSendEngine = engine;
+    sendEngineGoogle.classList.toggle('active', engine === 'google');
+    sendEngineGemini.classList.toggle('active', engine === 'gemini');
+  }
+
   function onApiKeyChange() {
     const hasKey = apiKeyInput.value.trim().length > 0;
     engineGemini.disabled = !hasKey;
     engineGemini.style.opacity = hasKey ? '1' : '.4';
-    if (!hasKey) syncEngineButtons('google');
+    sendEngineGemini.disabled = !hasKey;
+    sendEngineGemini.style.opacity = hasKey ? '1' : '.4';
+    if (!hasKey) {
+      syncEngineButtons('google');
+      syncSendEngineButtons('google');
+    }
   }
 
   apiKeyInput.addEventListener('input', onApiKeyChange);
@@ -913,12 +951,26 @@ function buildIndexHtml() {
     const btn = e.target.closest('button');
     if (!btn || btn.disabled) return;
     syncEngineButtons(btn.dataset.val);
-    // 即時儲存 engine 變更
+    // 即時儲存 chatEngine 變更
     try {
       const cfgNow = await fetch('/api/config').then(r => r.json());
       await fetch('/api/config', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...cfgNow, engine: btn.dataset.val })
+        body: JSON.stringify({ ...cfgNow, chatEngine: btn.dataset.val, engine: btn.dataset.val })
+      });
+    } catch { /* 不影響 UI */ }
+  });
+
+  segSendEngine.addEventListener('click', async (e) => {
+    const btn = e.target.closest('button');
+    if (!btn || btn.disabled) return;
+    syncSendEngineButtons(btn.dataset.val);
+    // 即時儲存 sendEngine 變更
+    try {
+      const cfgNow = await fetch('/api/config').then(r => r.json());
+      await fetch('/api/config', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...cfgNow, sendEngine: btn.dataset.val })
       });
     } catch { /* 不影響 UI */ }
   });
@@ -935,6 +987,15 @@ function buildIndexHtml() {
       const orig = bindHint.style.color;
       bindHint.style.color = 'var(--good)';
       setTimeout(() => { bindHint.style.color = orig; }, 800);
+    });
+  });
+
+  const condebugHint = document.getElementById('condebugHint');
+  condebugHint.addEventListener('click', () => {
+    navigator.clipboard.writeText(condebugHint.textContent).then(() => {
+      const orig = condebugHint.style.color;
+      condebugHint.style.color = 'var(--good)';
+      setTimeout(() => { condebugHint.style.color = orig; }, 800);
     });
   });
 
@@ -1022,7 +1083,8 @@ function buildIndexHtml() {
       // engine / api key
       apiKeyInput.value = cfg.apiKey || '';
       onApiKeyChange();
-      syncEngineButtons(cfg.engine || 'google');
+      syncEngineButtons(cfg.chatEngine || cfg.engine || 'google');
+      syncSendEngineButtons(cfg.sendEngine || 'google');
       statusEl.classList.remove('on', 'bad');
       if (status.watching) {
         statusEl.classList.add('on');
@@ -1045,6 +1107,8 @@ function buildIndexHtml() {
         uiLang: currentLang,
         apiKey: apiKeyInput.value.trim(),
         engine: currentEngine,
+        chatEngine: currentEngine,
+        sendEngine: currentSendEngine,
         tagCT: tagCTInput.value.trim() || 'CT',
         tagT: tagTInput.value.trim() || 'T',
         tagAll: tagAllInput.value.trim() || 'ALL'
@@ -1239,7 +1303,9 @@ function startWebServer(port) {
         const text = body.text;
         const lang = body.lang || "en";
         const team = body.team === true;
-        const resTrans = await smartTranslate(text, lang);
+        const cfg = loadConfig();
+        const sendEngine = cfg.apiKey ? (cfg.sendEngine || "google") : "google";
+        const resTrans = await smartTranslate(text, lang, sendEngine);
         const translated = resTrans.text;
         writeChatCfg({ message: translated, team });
         broadcast("command", { translated });
@@ -1289,7 +1355,7 @@ function startWebServer(port) {
   });
 
   server.listen(port, "127.0.0.1", () => {
-    log(sym.start, chalk.bold(`CS2 Chat Translator (Gemini AI)`));
+    log(sym.start, chalk.bold(`CS2 Chat Translator`));
     log(sym.info, chalk.cyan(`GUI → http://127.0.0.1:${port}`));
     logKV("Config", CONFIG_PATH);
     logKV("Log", LOG_PATH);

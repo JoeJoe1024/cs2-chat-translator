@@ -1,6 +1,6 @@
 {
   "name": "cs2-chat-translator",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "description": "Translate CS2 console.log chat messages (tm_/_tl/code_ + auto translate).",
   "type": "module",
   "bin": {

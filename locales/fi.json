@@ -1,5 +1,5 @@
 {
-  "subtitle": "Chat-kääntäjä (Gemini AI)",
+  "subtitle": "Chat-kääntäjä",
   "statusConnecting": "Yhdistetään…",
   "statusWatching": "Tarkkaillaan console.log",
   "statusIdle": "Odottaa",
@@ -19,6 +19,7 @@
   "logPathLabel": "Konsolin lokitiedoston polku",
   "cfgDirLabel": "CFG-hakemiston polku",
   "bindKeyLabel": "Sidonaisnäppäin",
+  "condebugLabel": "CS2 käynnistysvaihtoehto",
   "autoLangLabel": "Automaattikäännöksen kieli",
   "autoTransLabel": "Käännä ei-komentoviestit automaattisesti",
   "autoTransToggle": "Näytä automaattikäännöksen tulokset",
@@ -45,6 +46,8 @@
   "engineLabel": "Käännösmoottori",
   "engineGoogle": "Google Kääntäjä (Ilmainen)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "Testaa avain",
   "testKeyTesting": "Testataan…",
   "testKeyValid": "API-avain kelvollinen ✔",

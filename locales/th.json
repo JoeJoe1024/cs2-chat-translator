@@ -1,5 +1,5 @@
 {
-  "subtitle": "โปรแกรมแปลแชท (Gemini AI)",
+  "subtitle": "โปรแกรมแปลแชท",
   "statusConnecting": "กำลังเชื่อมต่อ…",
   "statusWatching": "กำลังดู console.log",
   "statusIdle": "ไม่ได้ใช้งาน",
@@ -19,6 +19,7 @@
   "logPathLabel": "เส้นทางไฟล์บันทึกคอนโซล",
   "cfgDirLabel": "เส้นทางไดเรกทอรี CFG",
   "bindKeyLabel": "คีย์ผูก",
+  "condebugLabel": "ตัวเลือกเปิด CS2",
   "autoLangLabel": "ภาษาสำหรับการแปลอัตโนมัติ",
   "autoTransLabel": "แปลข้อความที่ไม่ใช่คำสั่งโดยอัตโนมัติ",
   "autoTransToggle": "แสดงผลการแปลอัตโนมัติ",
@@ -45,6 +46,8 @@
   "engineLabel": "เครื่องมือแปล",
   "engineGoogle": "Google แปลภาษา (ฟรี)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "ทดสอบคีย์",
   "testKeyTesting": "กำลังทดสอบ…",
   "testKeyValid": "คีย์ API ถูกต้อง ✔",

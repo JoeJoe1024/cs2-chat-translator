@@ -1,5 +1,5 @@
 {
-  "subtitle": "Μεταφραστής Chat (Gemini AI)",
+  "subtitle": "Μεταφραστής Chat",
   "statusConnecting": "Σύνδεση…",
   "statusWatching": "Παρακολούθηση console.log",
   "statusIdle": "Αδρανής",
@@ -19,6 +19,7 @@
   "logPathLabel": "Διαδρομή αρχείου καταγραφής κονσόλας",
   "cfgDirLabel": "Διαδρομή καταλόγου CFG",
   "bindKeyLabel": "Πλήκτρο σύνδεσης",
+  "condebugLabel": "Επιλογή εκκίνησης CS2",
   "autoLangLabel": "Γλώσσα αυτόματης μετάφρασης",
   "autoTransLabel": "Αυτόματη μετάφραση μη-εντολών",
   "autoTransToggle": "Εμφάνιση αποτελεσμάτων αυτόματης μετάφρασης",
@@ -45,6 +46,8 @@
   "engineLabel": "Μηχανή μετάφρασης",
   "engineGoogle": "Google Μετάφραση (Δωρεάν)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "Δοκιμή κλειδιού",
   "testKeyTesting": "Δοκιμή…",
   "testKeyValid": "Κλειδί API έγκυρο ✔",

@@ -1,5 +1,5 @@
 {
-  "subtitle": "聊天翻譯器 (Gemini AI)",
+  "subtitle": "聊天翻譯器",
   "statusConnecting": "連線中…",
   "statusWatching": "監看 console.log 中",
   "statusIdle": "閒置",
@@ -19,6 +19,7 @@
   "logPathLabel": "主控台記錄路徑",
   "cfgDirLabel": "CFG 目錄路徑",
   "bindKeyLabel": "綁定按鍵",
+  "condebugLabel": "CS2 啟動選項",
   "autoLangLabel": "自動翻譯語言",
   "autoTransLabel": "自動翻譯非指令訊息",
   "autoTransToggle": "顯示自動翻譯結果",
@@ -45,6 +46,8 @@
   "engineLabel": "翻譯引擎",
   "engineGoogle": "Google 翻譯（免費）",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "送出翻譯引擎",
+  "chatEngineLabel": "聊天翻譯引擎",
   "testKeyBtn": "測試金鑰",
   "testKeyTesting": "測試中…",
   "testKeyValid": "金鑰有效 ✔",

@@ -4,7 +4,7 @@ Real-time chat translation for Counter-Strike 2. Supports Google Translate (free
 
 > **[繁體中文版 README](README.zh-TW.md)**
 
-> **Fork v2.0.0**  
+> **Fork v2.1.0**  
 > Original author: [MeckeDev](https://github.com/MeckeDev/cs2-chat-translator)  
 > Fork maintained by: [Joe (JoeJoe1024)](https://github.com/JoeJoe1024)  
 > Fully optimized for Windows, with Web GUI, Gemini AI, multi-language UI, and encrypted API key storage.
@@ -86,7 +86,7 @@ This fork is for players like me: people who want to connect across language bar
 
 ### Option A: Portable ZIP (recommended — no installation required)
 
-1. Download the latest **`cs2-chat-translator-2.0.0.zip`** from [Releases](https://github.com/JoeJoe1024/cs2-chat-translator/releases)
+1. Download the latest **`cs2-chat-translator-2.1.0.zip`** from [Releases](https://github.com/JoeJoe1024/cs2-chat-translator/releases)
 2. Extract the ZIP anywhere
 3. Double-click **`start.bat`**
 4. The browser opens automatically at `http://127.0.0.1:7420`

@@ -1,5 +1,5 @@
 {
-  "subtitle": "Traducător Chat (Gemini AI)",
+  "subtitle": "Traducător Chat",
   "statusConnecting": "Conectare…",
   "statusWatching": "Monitorizare console.log",
   "statusIdle": "Inactiv",
@@ -19,6 +19,7 @@
   "logPathLabel": "Calea jurnalului consolei",
   "cfgDirLabel": "Calea directorului CFG",
   "bindKeyLabel": "Tastă de legătură",
+  "condebugLabel": "Opțiunea de lansare CS2",
   "autoLangLabel": "Limba pentru auto-traducere",
   "autoTransLabel": "Auto-traduce mesajele non-comandă",
   "autoTransToggle": "Afișați rezultatele auto-traducerii",
@@ -45,6 +46,8 @@
   "engineLabel": "Motor de traducere",
   "engineGoogle": "Google Translate (Gratuit)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "Testati cheia",
   "testKeyTesting": "Se testeaza…",
   "testKeyValid": "Cheie API valida ✔",

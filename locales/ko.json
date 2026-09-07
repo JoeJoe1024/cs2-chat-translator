@@ -1,5 +1,5 @@
 {
-  "subtitle": "채팅 번역기 (Gemini AI)",
+  "subtitle": "채팅 번역기",
   "statusConnecting": "연결 중…",
   "statusWatching": "console.log 감시 중",
   "statusIdle": "대기 중",
@@ -19,6 +19,7 @@
   "logPathLabel": "콘솔 로그 경로",
   "cfgDirLabel": "CFG 디렉토리 경로",
   "bindKeyLabel": "바인드 키",
+  "condebugLabel": "CS2 실행 옵션",
   "autoLangLabel": "자동 번역 언어",
   "autoTransLabel": "명령어가 아닌 메시지 자동 번역",
   "autoTransToggle": "자동 번역 결과 표시",
@@ -45,6 +46,8 @@
   "engineLabel": "번역 엔진",
   "engineGoogle": "Google 번역 (무료)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "키 테스트",
   "testKeyTesting": "테스트 중…",
   "testKeyValid": "API 키 유효 ✔",

@@ -1,5 +1,5 @@
 {
-  "subtitle": "مترجم الدردشة (Gemini AI)",
+  "subtitle": "مترجم الدردشة",
   "statusConnecting": "جارِ الاتصال…",
   "statusWatching": "مراقبة console.log",
   "statusIdle": "خامل",
@@ -19,6 +19,7 @@
   "logPathLabel": "مسار سجل وحدة التحكم",
   "cfgDirLabel": "مسار دليل CFG",
   "bindKeyLabel": "مفتاح الربط",
+  "condebugLabel": "خيار تشغيل CS2",
   "autoLangLabel": "لغة الترجمة التلقائية",
   "autoTransLabel": "ترجمة الرسائل غير الأوامر تلقائيًا",
   "autoTransToggle": "عرض نتائج الترجمة التلقائية",
@@ -45,6 +46,8 @@
   "engineLabel": "محرك الترجمة",
   "engineGoogle": "ترجمة Google (مجاني)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "اختبار المفتاح",
   "testKeyTesting": "جارٍ الاختبار…",
   "testKeyValid": "مفتاح API صالح ✔",

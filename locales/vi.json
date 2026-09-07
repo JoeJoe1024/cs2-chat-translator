@@ -1,5 +1,5 @@
 {
-  "subtitle": "Dịch chat (Gemini AI)",
+  "subtitle": "Dịch chat",
   "statusConnecting": "Đang kết nối…",
   "statusWatching": "Đang theo dõi console.log",
   "statusIdle": "Nhàn rỗi",
@@ -19,6 +19,7 @@
   "logPathLabel": "Đường dẫn nhật ký console",
   "cfgDirLabel": "Đường dẫn thư mục CFG",
   "bindKeyLabel": "Phím liên kết",
+  "condebugLabel": "Tùy chọn khởi động CS2",
   "autoLangLabel": "Ngôn ngữ dịch tự động",
   "autoTransLabel": "Tự động dịch tin nhắn không phải lệnh",
   "autoTransToggle": "Hiển thị kết quả dịch tự động",
@@ -45,6 +46,8 @@
   "engineLabel": "Công cụ dịch",
   "engineGoogle": "Google Dịch (Miễn phí)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "Kiểm tra khóa",
   "testKeyTesting": "Đang kiểm tra…",
   "testKeyValid": "Khóa API hợp lệ ✔",

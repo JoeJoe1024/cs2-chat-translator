@@ -1,5 +1,5 @@
 {
-  "subtitle": "チャット翻訳ツール (Gemini AI)",
+  "subtitle": "チャット翻訳ツール",
   "statusConnecting": "接続中…",
   "statusWatching": "console.log を監視中",
   "statusIdle": "待機中",
@@ -19,6 +19,7 @@
   "logPathLabel": "コンソールログのパス",
   "cfgDirLabel": "CFG ディレクトリのパス",
   "bindKeyLabel": "バインドキー",
+  "condebugLabel": "CS2 起動オプション",
   "autoLangLabel": "自動翻訳の言語",
   "autoTransLabel": "コマンド以外のメッセージを自動翻訳",
   "autoTransToggle": "自動翻訳結果を表示",
@@ -45,6 +46,8 @@
   "engineLabel": "翻訳エンジン",
   "engineGoogle": "Google 翻訳（無料）",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "キーをテスト",
   "testKeyTesting": "テスト中…",
   "testKeyValid": "API キーは有効 ✔",

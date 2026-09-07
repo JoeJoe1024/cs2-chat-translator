@@ -1,5 +1,5 @@
 {
-  "subtitle": "Penerjemah Chat (Gemini AI)",
+  "subtitle": "Penerjemah Chat",
   "statusConnecting": "Menghubungkan…",
   "statusWatching": "Memantau console.log",
   "statusIdle": "Tidak aktif",
@@ -19,6 +19,7 @@
   "logPathLabel": "Jalur log konsol",
   "cfgDirLabel": "Jalur direktori CFG",
   "bindKeyLabel": "Tombol ikat",
+  "condebugLabel": "Opsi peluncuran CS2",
   "autoLangLabel": "Bahasa terjemahan otomatis",
   "autoTransLabel": "Terjemahkan pesan non-perintah secara otomatis",
   "autoTransToggle": "Tampilkan hasil terjemahan otomatis",
@@ -45,6 +46,8 @@
   "engineLabel": "Mesin terjemahan",
   "engineGoogle": "Google Terjemahan (Gratis)",
   "engineGemini": "Gemini AI",
+  "sendEngineLabel": "Send Text Engine",
+  "chatEngineLabel": "Chat Translation Engine",
   "testKeyBtn": "Uji kunci",
   "testKeyTesting": "Menguji…",
   "testKeyValid": "Kunci API valid ✔",
