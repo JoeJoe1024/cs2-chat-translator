@@ -1,0 +1,6 @@
+
+[錯誤] 找不到 dist\launcher.mjs,程式尚未建置。
+
+開發版:請先在專案資料夾執行一次  npm install  再執行  npm run build。
+發行版:請重新下載並完整解壓縮 Portable ZIP。
+

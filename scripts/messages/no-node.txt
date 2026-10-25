@@ -1,0 +1,10 @@
+
+[錯誤] 找不到 Node.js,無法啟動 CS2 Chat Translator。
+
+這是「開發版」啟動方式,需要先安裝 Node.js 22.12 或更新版本:
+  https://nodejs.org/ (建議安裝 LTS 版本)
+安裝完成後請重新雙擊 start.bat。
+
+如果你使用的是免安裝的「Portable 發行版」,請確認 runtime 資料夾與 start.bat
+放在同一層,並且已完整解壓縮(不要在壓縮檔內直接執行)。
+

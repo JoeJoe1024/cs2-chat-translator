@@ -1,0 +1,5 @@
+# Keep line endings stable: LF in the repository and in checkouts, except *.bat which cmd.exe needs as CRLF (also in the source archives).
+* text=auto eol=lf
+*.bat text eol=crlf
+*.png binary
+*.ico binary

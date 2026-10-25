@@ -1,0 +1,53 @@
+/*
+ * Design tokens. Every colour is a light-dark(<light>, <dark>) pair, so there is ONE definition per token and the
+ * theme is chosen only by `color-scheme`:
+ *   no data-theme  → follows the operating system (prefers-color-scheme)
+ *   data-theme=light / dark → forced by the user
+ * tests/web/theme.test.ts parses this file and checks WCAG contrast for the pairs the UI actually uses.
+ */
+:root {
+  color-scheme: light dark;
+
+  /* surfaces */
+  --bg: light-dark(#f2f3f6, #0f1115);
+  --surface: light-dark(#ffffff, #171a20);
+  --surface-2: light-dark(#eceef2, #1e222a);
+  --surface-3: light-dark(#e1e4ea, #272c36);
+  --border: light-dark(#747d8d, #667083);
+  --border-soft: light-dark(#d3d7de, #2b313c);
+
+  /* text */
+  --text: light-dark(#14171c, #e8ebf0);
+  --text-muted: light-dark(#4a5361, #a6aebb);
+
+  /* product accent (gold) */
+  --accent: light-dark(#c58600, #e8b030);
+  --on-accent: #1a1300;
+  --accent-text: light-dark(#7a4f00, #f2c45a);
+
+  /* CS2 team colours */
+  --ct: light-dark(#1b5bbf, #86b8ff);
+  --t: light-dark(#8a5200, #f4b94a);
+  --all: light-dark(#3b4350, #c8cfda);
+
+  /* status */
+  --ok: light-dark(#10683a, #62d690);
+  --warn: light-dark(#85500a, #f2bb52);
+  --danger: light-dark(#b0241b, #ff8f86);
+
+  --focus: light-dark(#1b5bbf, #8cbaff);
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: light-dark(0 1px 2px rgb(20 23 28 / 10%), 0 1px 2px rgb(0 0 0 / 50%));
+  --font: "Segoe UI", system-ui, -apple-system, "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}

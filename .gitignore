@@ -1,0 +1,15 @@
+node_modules/
+dist/
+release/
+coverage/
+*.log
+.env
+
+# Local-only files that must never be published
+docs/internal/
+*.dpapi.json
+instance.json
+settings.json
+launcher.lock
+.playwright-mcp/
+.claude/
